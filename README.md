@@ -337,7 +337,7 @@ into:
 
 ## 📌 Project Status
 
-- [ ] Phase 1 — Not started  
+- [ ] Phase 1 — Ongoing
 - [ ] Phase 2 — Not started  
 - [ ] Phase 3 — Not started  
 - [ ] Phase 4 — Not started  
