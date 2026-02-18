@@ -1,19 +1,33 @@
 Name: 'LaRaye'
-Tiles:
-  A1:
-    outter_s: 0
-  B2:
-    outter_s: 1
-  C1:
-    outter_s: 2
-    inner_s: 0
-  D2:
-    outter_s: 3
-
+Tiles: [2B, 3B, 4B, 5B, 6A, 7A, 8A, 11B, 12B, 13B, 16B, 17B]
 Adjacency:    
-  A1: [B2]
-  B2: [C1]
-  C1: [D2]
-  D2: [A1]
+  2B: [16B, 13B, 17B]
+  3B: [6A, 16B, 13B, 8A]
+  4B: [7A, 12B, 5B]
+  5B: [4B, 12B, 8A, 11B]
+  6A: [16B, 3B]
+  7A: [17B, 12B, 4B]
+  8A: [12B, 13B, 3B, 11B, 5B]
+  11B: [5B, 8A]
+  12B: [17B, 13B, 8A, 5B, 4B, 7A]
+  13B: [17B, 2B, 16B, 3B, 8A, 12B]
+  16B: [2B, 13B, 3B, 6A]
+  17B: [2B, 13B, 12B, 7A]
+Markers:
+  Objective: [2B, 16B, 6A, 13B, 7A, 5B]
+  Concentration:
+    EUA:
+      17B: ALL
+    GER:
+      5B: ALL
+  Scoutted:
+    EUA: [17B, 2B]
+    GER: [8A, 5B]
+  Controlled:
+    EUA: []
+    GER: [5B]
+    
+    
+
 
 

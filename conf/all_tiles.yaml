@@ -1,0 +1,108 @@
+1A:
+  inner_shield: 0
+  outter_shield: 0
+1B:
+  inner_shield: 1
+  outter_shield: 1
+2A:
+  inner_shield: 1
+  outter_shield: 3
+2B:
+  inner_shield: 2
+  outter_shield: 2
+3A:
+  inner_shield: 3
+  outter_shield: 3
+3B:
+  inner_shield: 0
+  outter_shield: 0
+4A:
+  inner_shield: 3
+  outter_shield: 3
+4B:
+  inner_shield: 0
+  outter_shield: 0
+5A:
+  inner_shield: 1
+  outter_shield: 1
+5B:
+  inner_shield: 1
+  outter_shield: 1
+6A:
+  inner_shield: 1
+  outter_shield: 1
+6B:
+  inner_shield: 1
+  outter_shield: 1
+7A:
+  inner_shield: 2
+  outter_shield: 2
+7B:
+  inner_shield: 1
+  outter_shield: 1
+8A:
+  inner_shield: 2
+  outter_shield: 2
+8B:
+  inner_shield: 1
+  outter_shield: 1
+9A:
+  inner_shield: 1
+  outter_shield: 3
+9B:
+  inner_shield: 0
+  outter_shield: 0
+10A:
+  inner_shield: 1
+  outter_shield: 1
+10B:
+  inner_shield: 0
+  outter_shield: 0
+11A:
+  inner_shield: 1
+  outter_shield: 1
+11B:
+  inner_shield: 0
+  outter_shield: 0
+12A:
+  inner_shield: 1
+  outter_shield: 1
+12B:
+  inner_shield: 0
+  outter_shield: 0
+13A:
+  inner_shield: 0
+  outter_shield: 0
+13B:
+  inner_shield: 1
+  outter_shield: 1
+14A:
+  inner_shield: 0
+  outter_shield: 0
+14B:
+  inner_shield: 1
+  outter_shield: 1
+15A:
+  inner_shield: 0
+  outter_shield: 0
+15B:
+  inner_shield: 2
+  outter_shield: 2
+16A:
+  inner_shield: 1
+  outter_shield: 3
+16B:
+  inner_shield: 2
+  outter_shield: 2
+17A:
+  inner_shield: 0
+  outter_shield: 0
+17B:
+  inner_shield: 3
+  outter_shield: 3
+18A:
+  inner_shield: 0
+  outter_shield: 0
+18B:
+  inner_shield: 3
+  outter_shield: 3
