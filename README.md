@@ -94,16 +94,16 @@ Think of it as:
 
 ### Landmarks
 
-- [ ] Represent generic map and tiles  
-- [ ] Load scenario maps from data files  
-- [ ] Compute valid paths between tiles  
-- [ ] Compute movement cost with terrain modifiers  
-- [ ] Compute line-of-sight  
-- [ ] Compute cover / defense bonuses  
-- [ ] Unit tests for paths and LoS  
+- [X] Represent generic map and tiles  
+- [ ] Represent objective points
+- [ ] Represent scoutted tiles
+- [X] Load scenario maps from data files  
+- [X] Compute minimal paths between tiles  
+- [ ] Compute distance defence + terrain defense between tiles  
+
 
 **Exit criteria:**  
-✔️ The environment can answer: *Can I move there? How far? Do I see you? What’s the defense here?*
+✔️ The environment can answer: *Can I move there? How far? What’s the defense here?*
 
 ---
 
