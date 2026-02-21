@@ -95,8 +95,8 @@ Think of it as:
 ### Landmarks
 
 - [X] Represent generic map and tiles  
-- [ ] Represent objective points
-- [ ] Represent scoutted tiles
+- [X] Represent objective points
+- [X] Represent scoutted tiles
 - [X] Load scenario maps from data files  
 - [X] Compute minimal paths between tiles  
 - [ ] Compute distance defence + terrain defense between tiles  

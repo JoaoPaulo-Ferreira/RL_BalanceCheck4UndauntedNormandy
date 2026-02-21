@@ -5,10 +5,10 @@ import networkx as nx
 
 class Tile:
     
-    def __init__(self, name, inner_s = 0, outter_s = 0) -> None:
+    def __init__(self, name, inner_shield = 0, outter_shield = 0) -> None:
         self.name = name
-        self.outter_shield = outter_s
-        self.inner_shield = inner_s
+        self.outter_shield = outter_shield
+        self.inner_shield = inner_shield
     
     def set_inner_shield(self, shield_val:int):
         if shield_val >= 0:
@@ -25,12 +25,11 @@ class Tile:
         return self.outter_shield
 
 class Map:
+
     def __init__(self) -> None:
         self.scenario_name = ""
         self.TileMap = {}
-        self.adjacency = 0
-        # self.tiles_file = os.getenv('tiles_filepath')
-        self.all_tiles = []
+        self.adjacency = nx.Graph() 
         self._load_all_tiles()
     
     def get_shortests_distance(self, tile_origin, tile_destiny):
@@ -39,6 +38,22 @@ class Map:
     def _load_all_tiles(self):
         with open(os.getenv('tiles_filepath'), 'r') as f:
             self.all_tiles = yaml.load(f, Loader=yaml.SafeLoader)
+
+    def add_tile(self, tile_name, inner_shield, outter_shield):
+        print(f"create Tile {tile_name}, inner {inner_shield} outter {outter_shield}")
+        self.TileMap[tile_name] = Tile(name = tile_name, inner_shield = inner_shield, outter_shield = outter_shield)
+
+    def are_connected(self, tile_1, tile_2):
+        return self.adjacency.has_edge(tile_1, tile_2)
+
+    def add_path(self, tile_origin, tile_destiny):
+        if isinstance(tile_destiny, str) and not self.are_connected(tile_origin, tile_destiny):
+            self.adjacency.add_edge(tile_origin, tile_destiny)
+        else:
+            for destination in tile_destiny:
+                if not self.are_connected(tile_origin, destination):
+                    self.adjacency.add_edge(tile_origin, destination)
+                    print(f"Added {tile_origin} - {destination}")
 
     def load_map(self, conf_path):
         with open(conf_path, 'r') as f:
@@ -68,7 +83,7 @@ class Map:
 
         print('Tiles loaded.\n')
         print('Loading Map -> Adjacency...')
-        self.adjacency = nx.Graph()
+        # self.adjacency = nx.Graph()
         print(adj_list)
         for origin, adjacents in adj_list.items():
             for destiny in adjacents:
@@ -90,12 +105,3 @@ class Map:
         for x,y in self.adjacency.edges():
             print(f"{x} and {y} are adjacents")
 
-if __name__ == '__main__':
-
-    from dotenv import load_dotenv
-    load_dotenv()
-    map = Map()
-    map.load_map(os.getenv('map1_filepath'))
-    map.to_string()
-    print(map.get_shortests_distance('11B', '2B'))
-    print(map.get_shortests_distance('7A', '6A'))
