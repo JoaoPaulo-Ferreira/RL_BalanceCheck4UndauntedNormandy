@@ -99,7 +99,7 @@ Think of it as:
 - [X] Represent scoutted tiles
 - [X] Load scenario maps from data files  
 - [X] Compute minimal paths between tiles  
-- [ ] Compute distance defence + terrain defense between tiles  
+- [X] Compute distance defence + terrain defense between tiles  
 
 
 **Exit criteria:**  

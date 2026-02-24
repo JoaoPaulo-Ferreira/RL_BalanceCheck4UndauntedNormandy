@@ -14,12 +14,18 @@ Adjacency:
   16B: [2B, 13B, 3B, 6A]
   17B: [2B, 13B, 12B, 7A]
 Markers:
-  Objective: [2B, 16B, 6A, 13B, 7A, 5B]
+  Objective: 
+    2B: 1 
+    16B: 1
+    6A: 2
+    13B: 2
+    7A: 1
+    5B: 3
   Concentration:
     EUA:
-      17B: ALL
+      17B: [ALL]
     GER:
-      5B: ALL
+      5B: [ALL]
   Scoutted:
     EUA: [17B, 2B]
     GER: [8A, 5B]
