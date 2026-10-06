@@ -1,25 +1,13 @@
 import yaml
-import os 
 import networkx as nx
 
 
 class Tile:
     
-    def __init__(self, name, inner_shield = 0, outter_shield = 0) -> None:
+    def __init__(self, name, shield = 0, cliff = False) -> None:
         self.name = name
-        self.outter_shield = outter_shield
-        self.inner_shield = inner_shield
-    
-    def set_inner_shield(self, shield_val:int):
-        if shield_val >= 0:
-            self.inner_shield = shield_val
-
-    def set_outter_shield(self, shield_val:int):
-        if shield_val >= 0:
-            self.outter_shield = shield_val
-    
-    def get_shield(self):
-        return self.inner_shield, self.outter_shield
+        self.shield = shield
+        self.cliff = cliff
 
 
 class Map:
@@ -43,8 +31,8 @@ class Map:
             self.all_tiles = yaml.load(f, Loader=yaml.SafeLoader)
         self.load_map()
 
-    def add_tile(self, tile_name, inner_shield, outter_shield):
-        self.TileMap[tile_name] = Tile(name = tile_name, inner_shield = inner_shield, outter_shield = outter_shield)
+    def add_tile(self, tile_name, shield, cliff=False):
+        self.TileMap[tile_name] = Tile(name = tile_name, shield = shield, cliff = cliff)
 
     def are_connected(self, tile_1, tile_2):
         return self.adjacency.has_edge(tile_1, tile_2)
@@ -80,7 +68,7 @@ class Map:
         print("Terrain Tiles\n")
         for tile_name in self.TileMap.keys():
             tile = self.TileMap[tile_name]
-            print(f"{tile.name}\n\toutter_shield={tile.outter_shield}\n\tinner_shield={tile.inner_shield}")
+            print(f"{tile.name}\n\tcliff={tile.cliff}\n\tshield={tile.shield}")
 
         print("Adjacency graph\n")
         for x,y in self.adjacency.edges():

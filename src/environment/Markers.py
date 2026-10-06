@@ -1,5 +1,4 @@
 import yaml
-import os 
 from collections import defaultdict
     
 
@@ -59,11 +58,13 @@ class MarkerManager:
     def starting_game_markers(self, in_markers_dict):
 
         objective_markers = in_markers_dict.get("Objective", {})
+
         for position, value in objective_markers.items():
             marker = Objective(value)
             self._markers_by_tile[position]["Objective"].append(marker)
 
         concentration_markers = in_markers_dict.get("Concentration", {})
+
         for nation, markers in concentration_markers.items():
             for position, troop in markers.items():
                 marker = Concentration(nation, troop)
@@ -72,6 +73,7 @@ class MarkerManager:
         scoutted_markers = in_markers_dict.get("Scoutted", {})
         for nation, position_list in scoutted_markers.items():
             for position  in position_list:
+                print(f"position{position} nation {nation} scautted!!!!")
                 marker = Scoutted(nation)
                 self._markers_by_tile[position]["Scoutted"].append(marker)
 
@@ -83,6 +85,7 @@ class MarkerManager:
 
 
     def to_string(self):
+        print("TEST ", self._markers_by_tile.keys())
         for position, types_dict in self._markers_by_tile.items():
             print(f"{position}:")
             for marker_type, markers in types_dict.items():
