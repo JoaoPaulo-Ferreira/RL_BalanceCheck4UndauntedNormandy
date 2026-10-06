@@ -9,6 +9,8 @@ class Tile:
         self.shield = shield
         self.cliff = cliff
 
+    def is_cliff(self):
+        return self.cliff
 
 class Map:
 
@@ -21,7 +23,29 @@ class Map:
         self._load_all_tiles()
     
     def get_distance(self, tile_origin, tile_destiny):
-        return nx.shortest_path_length(self.adjacency, source=tile_origin, target=tile_destiny)
+        if self.tiles_in_map(tile_origin, tile_destiny):
+            return nx.shortest_path_length(self.adjacency, source=tile_origin, target=tile_destiny)
+        else:
+            raise Exception(f"{tile_origin} and {tile_destiny} must be in Map") 
+
+    def get_terrain_shield(self, origin_key, destiny_key):
+        if self.tiles_in_map(origin_key, destiny_key):
+            tile_destiny = self.TileMap[destiny_key]
+            if origin_key == destiny_key:
+                return tile_destiny.shield 
+
+            if tile_destiny.is_cliff(): 
+                return 3
+            
+            return tile_destiny.shield()
+
+        else:
+            raise Exception(f"{origin_key} and {destiny_key} must be in Map") 
+
+    def tiles_in_map(self, *tiles):
+        if all(tile in self.adjacency.nodes for tile in tiles):
+            return True
+        return False
     
     def get_shield(self, position):
         return self.TileMap[position].get_shield() 

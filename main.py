@@ -9,4 +9,11 @@ if __name__ == '__main__':
     manager.map.to_string()
     print("\n\nMarker manager\n\n")
     manager.markers.to_string()
+    try:
+        manager.map.get_terrain_shield("12B", "6A")
+        manager.map.get_terrain_shield("", "")
+    except:
+        pass
+    manager.map.get_terrain_shield("12B", "7B")
+
 
