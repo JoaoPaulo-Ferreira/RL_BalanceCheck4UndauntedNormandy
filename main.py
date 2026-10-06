@@ -8,5 +8,5 @@ if __name__ == '__main__':
     manager = EnvironmentManager()
     manager.map.to_string()
     print("\n\nMarker manager\n\n")
-    print(manager.markers.to_string())
+    manager.markers.to_string()
 
