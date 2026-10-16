@@ -1,0 +1,110 @@
+1A:
+  shield: 0
+  
+1B:
+  shield: 1
+  
+2A:
+  shield: 1
+  cliff: True
+
+2B:
+  shield: 2
+  
+3A:
+  shield: 3
+
+3B:
+  shield: 0
+  
+4A:
+  shield: 3
+
+4B:
+  shield: 0
+  
+5A:
+  shield: 1
+  
+5B:
+  shield: 1
+  
+6A:
+  shield: 1
+  
+6B:
+  shield: 1
+  
+7A:
+  shield: 2
+  
+7B:
+  shield: 1
+  
+8A:
+  shield: 2
+  
+8B:
+  shield: 1
+  
+9A:
+  shield: 1
+  cliff: True
+
+9B:
+  shield: 0
+  
+10A:
+  shield: 1
+  
+10B:
+  shield: 0
+  
+11A:
+  shield: 1
+  
+11B:
+  shield: 0
+  
+12A:
+  shield: 1
+  
+12B:
+  shield: 0
+  
+13A:
+  shield: 0
+  
+13B:
+  shield: 1
+  
+14A:
+  shield: 0
+  
+14B:
+  shield: 1
+  
+15A:
+  shield: 0
+  
+15B:
+  shield: 2
+  
+16A:
+  shield: 1
+  cliff: True
+
+16B:
+  shield: 2
+  
+17A:
+  shield: 0
+  
+17B:
+  shield: 3
+
+18A:
+  shield: 0
+  
+18B:
+  shield: 3

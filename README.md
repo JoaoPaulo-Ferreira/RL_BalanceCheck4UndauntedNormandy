@@ -54,10 +54,10 @@ Think of it as:
 
 ## 🗂️ High-Level Architecture (Draft)
 
-- `engine/` → Game loop, rules, state transitions  
-- `map/` → Tiles, terrain, paths, line-of-sight  
+- `environment/` → Tiles, terrain, paths, maps 
 - `units/` → Units, stats, states, combat models  
 - `cards/` → Cards, decks, hands, action generation  
+- `engine/` → Game loop, rules, state transitions  
 - `rules/` → Validation, invariants, legality checks  
 - `ui_text/` → Text-based interface (human-playable)  
 - `agents/` → Random, heuristic, and RL agents  
@@ -75,7 +75,6 @@ Think of it as:
 - `Tile`
   - `terrain_type`, `neighbors`
   - `is_passable(unit_type)`
-  - `movement_cost(unit_type)`
   - `defense_modifier()`
 
 - `Map`
@@ -83,27 +82,20 @@ Think of it as:
   - `get_tile(id)`
   - `are_adjacent(a, b)`
   - `load_from_file(path)`
-
-- `Pathfinder`
-  - `find_paths(start, end)`
-  - `shortest_path(start, end, unit_type)`
-  - `path_cost(path, unit_type)`
-
-- `LineOfSight`
-  - `has_los(a, b, map)`
+  - `get_distance(tile_origin, tile_destiny)`
 
 ### Landmarks
 
-- [ ] Represent generic map and tiles  
-- [ ] Load scenario maps from data files  
-- [ ] Compute valid paths between tiles  
-- [ ] Compute movement cost with terrain modifiers  
-- [ ] Compute line-of-sight  
-- [ ] Compute cover / defense bonuses  
-- [ ] Unit tests for paths and LoS  
+- [X] Represent generic map and tiles  
+- [X] Represent objective points
+- [X] Represent scoutted tiles
+- [X] Load scenario maps from data files  
+- [X] Compute minimal paths between tiles  
+- [X] Compute distance defence + terrain defense between tiles  
+
 
 **Exit criteria:**  
-✔️ The environment can answer: *Can I move there? How far? Do I see you? What’s the defense here?*
+✔️ The environment can answer: *Can I move there? How far? What’s the defense here?*
 
 ---
 
@@ -337,7 +329,7 @@ into:
 
 ## 📌 Project Status
 
-- [ ] Phase 1 — Not started  
+- [ ] Phase 1 — Ongoing
 - [ ] Phase 2 — Not started  
 - [ ] Phase 3 — Not started  
 - [ ] Phase 4 — Not started  
