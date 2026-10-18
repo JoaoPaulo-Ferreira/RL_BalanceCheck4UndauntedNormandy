@@ -1,0 +1,52 @@
+USA:
+  Deck:
+    Sergeant: []
+    Leader: 
+      squads: ["A", "B"]
+    Rifleman:
+      squads: ["A", "B"]
+      position: ["17B"]
+      count: 1 
+    Scouts:
+      squads: ["A", "B"]
+      position: ["17B"]
+      count: 1 
+    Fog:
+      count: 2 
+
+  Supply:
+    Scouts: 
+      squads: ["A", "B"]
+      count: 4 
+    Rifleman:
+      squads: ["A", "B"]
+      count: 4 
+    Fog:
+      count: 8 
+
+
+GER:
+  Deck:
+    Sergeant: []
+    Leader: 
+      squads: ["A", "B"]
+    Rifleman:
+      squads: ["A", "B"]
+      position: ["5B"]
+      count: 1 
+    Scouts:
+      squads: ["A", "B"]
+      position: ["5B"]
+      count: 1 
+    Fog:
+      count: 2 
+
+  Supply:
+    Scouts: 
+      squads: ["A", "B"]
+      count: 4 
+    Rifleman:
+      squads: ["A", "B"]
+      count: 4 
+    Fog:
+      count: 8 

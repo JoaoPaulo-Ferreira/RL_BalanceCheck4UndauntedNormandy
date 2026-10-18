@@ -5,6 +5,33 @@ def dice_roll(size):
     return np.random.Generator.integers(low=1, high=6, size=size, endpoint=True)
 
 
+class troop_unit:
+
+    def __eq__(other_unit):
+        outcome = []
+        if hasattr(self, squad):
+            outcome.apppend(self.squad == other_unit.squad)
+
+        if hasattr(self, )
+
+
+
+class Scouts:
+    def __init__(self, initiative=6, squad="A", actions=["scout", "attack", "recon", "conceal"], can_act=True):
+        self.initiative = initiative
+        self.squad = squad
+        self.actions = actions
+        self.can_act = can_act
+        self.shield = 5
+        self.postion = None
+
+    def set_position(self, position):
+        self.postion = position
+
+    def attack(self, enemy_shield):
+        return np.any(dice_roll(1) > enemy_shield) 
+
+
 class Rifleman:
     def __init__(self, initiative=5, squad="A", actions=["move", "attack", "control"], can_act=True):
         self.initiative = initiative 
@@ -12,6 +39,10 @@ class Rifleman:
         self.actions = actions
         self.can_act = can_act
         self.shield = 4
+        self.postion = None
+
+    def set_position(self, position):
+        self.postion = position
 
     def attack(self, enemy_shield):
         return np.any(dice_roll(1) > enemy_shield) 
@@ -23,18 +54,6 @@ class Leader:
         self.squad = squad
 
 
-class Scouts:
-    def __init__(self, initiative=6, squad="A", actions=["scout", "attack", "recon", "conceal"], can_act=True):
-        self.initiative = initiative
-        self.squad = squad
-        self.actions = actions
-        self.can_act = can_act
-        self.shield = 5
-
-    def attack(self, enemy_shield):
-        return np.any(dice_roll(1) > enemy_shield) 
-
-
 class Gunners:
     def __init__(self, initiative=3, squad="A", actions=["move", "attack", "suppress"], can_act=True):
         self.initiative = initiative
@@ -42,6 +61,10 @@ class Gunners:
         self.actions = actions
         self.can_act = can_act
         self.shield = 4
+        self.postion = None
+
+    def set_position(self, position):
+        self.postion = position
 
     def attack(self, enemy_shield):
         return np.any(dice_roll(2) > enemy_shield) 
@@ -56,6 +79,10 @@ class Snipers:
         self.actions = actions
         self.can_act = can_act
         self.shield = 6
+        self.postion = None
+
+    def set_position(self, position):
+        self.postion = position
 
 
 class Sergeant:
